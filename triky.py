@@ -167,7 +167,7 @@ def controlVertical():
 
 def controlDiagonal():
     global ganador
-    if (varmatriz[0][0] == varmatriz[1][1] == varmatriz[2][2] != "-" 
+    if (varmatriz[0][0] == varmatriz[1][1] == varmatriz[2][2] 
         or tablero2[1][0] == tablero2[2][1] == tablero2[3][2] 
         or tablero2[0][1] == tablero2[1][2] == tablero2[2][3] 
         or tablero2[1][1] == tablero2[2][2] == tablero2[3][3] != "-" ):
