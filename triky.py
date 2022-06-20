@@ -4,8 +4,11 @@ tablero = [['-', '-', '-'],
            ]
 
 tablero2 = [['-', '-', '-', '-'],
+
             ['-', '-', '-', '-'],
+
             ['-', '-', '-', '-'],
+
             ['-', '-', '-', '-']
             ]
 
@@ -148,14 +151,40 @@ def controlVertical():
 
 def controlDiagonal():
     global ganador
-    if (tablero[0][0] == tablero[1][1] == tablero[2][2] != "-"):
-        ganador = tablero[0][0]
+    if (varmatriz[0][0] == varmatriz[1][1] == varmatriz[2][2] != "-" 
+        or varmatriz[1][0] == varmatriz[2][1] == varmatriz[3][2] 
+        or varmatriz[0][1] == varmatriz[1][2] == varmatriz[2][3] 
+        or varmatriz[1][1] == varmatriz[2][2] == varmatriz[3][3] != "-" ):
         gano = "gano diagonal"
-        return gano
-    elif tablero[0][2] == tablero[1][1] == tablero[2][0] != "-":
-        ganador = tablero[2][0]
+        if (varmatriz[0][0]) :
+            ganador = varmatriz[0][0]
+            return gano
+        elif (varmatriz[0][1]) :
+            ganador = varmatriz[0][1]
+            return gano
+        elif (varmatriz[0][1]) :
+            ganador = varmatriz[0][1]
+            return gano
+        elif (varmatriz[1][1]) :
+            ganador = varmatriz[1][1]
+            return gano
+    elif (varmatriz[0][2] == varmatriz[1][1] == varmatriz[2][0] 
+        or varmatriz[0][3] == varmatriz[1][2] == varmatriz[2][1] 
+        or varmatriz[1][3] == varmatriz[2][2] == varmatriz[3][2]
+        or varmatriz[1][2] == varmatriz[2][1] == varmatriz[3][0] != "-") :
         gano = "gano diagonal"
-        return gano
+        if (varmatriz[0][2]) :
+            ganador = varmatriz[0][2]
+            return gano
+        elif (varmatriz[0][3]) :
+            ganador = varmatriz[0][3]
+            return gano
+        elif (varmatriz[1][3]) :
+            ganador = varmatriz[1][3]
+            return gano
+        elif (varmatriz[1][2]) :
+            ganador = varmatriz[1][2]
+            return gano
 
 ###################################################################
 
