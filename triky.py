@@ -1,17 +1,18 @@
-tablero =[['-','-','-'],
-        ['-','-','-'],
-        ['-','-','-']
-        ]
+tablero = [['-', '-', '-'],
+           ['-', '-', '-'],
+           ['-', '-', '-']
+           ]
 
-tablero2 =[['-','-','-','-'],
-        ['-','-','-','-'],
-        ['-','-','-','-'],
-        ['-','-','-','-']
-        ]
-       
+tablero2 = [['-', '-', '-', '-'],
+            ['-', '-', '-', '-'],
+            ['-', '-', '-', '-'],
+            ['-', '-', '-', '-']
+            ]
+
 ganador = None
 
 ###################################################################
+
 
 def jugar():
     global ganador
@@ -25,40 +26,62 @@ def jugar():
         ver_tablero(tab)
         for i in range(9):
             print("Turno del jugador 1 - X")
-            valor="X"
-            #empiezan a jugar - Jugador1
+            valor = "X"
+            # empiezan a jugar - Jugador1
             jugada(valor)
-            data = huboGanador(varmatriz)
+            data = huboGanador()
             if ganador != "X":
                 print("Turno del jugador 2 - O")
-                valor="O"
+                valor = "O"
                 jugada(valor)
                 huboGanador()
                 if ganador == "O":
-                    print("Felidades!!! Jugador 2 GANA el juego\n ",data)
+                    print("Felidades!!! Jugador 2 GANA el juego\n ", data)
                     break
-           
-            elif ganador=="X":
-                print("Felicidades!!! Jugador 1 GANA el juego\n ",data)
+
+            elif ganador == "X":
+                print("Felicidades!!! Jugador 1 GANA el juego\n ", data)
                 break
             elif (tam == 4):
                 print("Empataron del juego repitanlo euller les dice")
         ganador = None
-       
-    elif(tam==4):
-       
+
+    elif(tam == 4):
+
         varmatriz = tablero2
 
         tab = False
-       
-        ver_tablero(tab)
-       
-    else:
-       
-        print("solo valores : 3 o 4")
-       
 
-###################################################################    
+        ver_tablero(tab)
+
+        for i in range(16):
+            print("Turno del jugador 1 - X")
+            valor = "X"
+            # empiezan a jugar - Jugador1
+            jugada(valor)
+            data = huboGanador()
+            if ganador != "X":
+                print("Turno del jugador 2 - O")
+                valor = "O"
+                jugada(valor)
+                huboGanador()
+                if ganador == "O":
+                    print("Felidades!!! Jugador 2 GANA el juego\n ", data)
+                    break
+
+            elif ganador == "X":
+                print("Felicidades!!! Jugador 1 GANA el juego\n ", data)
+                break
+            elif (tam == 4):
+                print("Empataron del juego repitanlo euller les dice")
+        ganador = None
+
+    else:
+
+        print("solo valores : 3 o 4")
+
+
+###################################################################
 
 def huboGanador():
     global ganador
@@ -71,64 +94,76 @@ def huboGanador():
     gano = controlDiagonal()
     if gano != None:
         return gano
-   
+
 ###################################################################
-   
-def controlLinea(matriz):
+
+
+def controlLinea():
     global ganador
     global gano
-    if (tablero[0][0]== tablero[0][1]==tablero[0][2] !="-" 
-        or [0][1] ==  tablero[0][2] == tablero[0][3] ) :
-        ganador = tablero[0][0]
+    if (varmatriz[0][0] == varmatriz[0][1] == varmatriz[0][2] != "-"
+            or [0][1] == varmatriz[0][2] == varmatriz[0][3] != "-"):
+        ganador = tablero[0][1]
         gano = "gano horizontal"
         return gano
-    elif (tablero[1][0]== tablero[1][1]==tablero[1][2] !="-" 
-        or [1][1] ==  tablero[1][2] == tablero[1][3] ) :
-        ganador = tablero[1][0]
+    elif (varmatriz[1][0] == varmatriz[1][1] == varmatriz[1][2] != "-"
+          or varmatriz[1][1] == varmatriz[1][2] == varmatriz[1][3] != "-"):
+        ganador = tablero[1][1]
         gano = "gano horizontal"
         return gano
-    elif (tablero[2][0]== tablero[2][1]==tablero[2][2] !="-" 
-        or [2][0] == tablero2[0][1] == tablero2[1][1] == tablero2[2][2] ) :
-        ganador = tablero[2][0]
+    elif (varmatriz[2][0] == varmatriz[2][1] == varmatriz[2][2] != "-"
+          or varmatriz[2][1] == varmatriz[2][2] == varmatriz[2][3] != "-"):
+        ganador = tablero[2][1]
         gano = "gano horizontal"
         return gano
-       
+
 ###################################################################
-       
+
+
 def controlVertical():
     global ganador
-    if (tablero[0][0] ==  tablero[1][0] == tablero[2][0] != "-" or tablero2[0][0] ==  tablero2[1][1] == tablero2[2][2] != "-" ):
-        ganador = tablero[0][0]
-        gano = "gano vertical"
-        return gano
-    elif (tablero[0][1] ==  tablero[1][1] == tablero[2][1] != "-" or tablero2[0][0] ==  tablero2[1][1] == tablero2[2][2] != "-" ):
+    if (varmatriz[0][0] == varmatriz[1][0] == varmatriz[2][0] != "-" 
+        or varmatriz[1][0] == varmatriz[2][0] == varmatriz[3][0] != "-"):
         ganador = tablero[1][1]
         gano = "gano vertical"
         return gano
-    elif (tablero[0][2] ==  tablero[1][2] == tablero[2][2] != "-" or tablero[0][0] ==  tablero[1][1] == tablero[2][2] != "-" ) :
-        ganador = tablero[2]
+    elif (varmatriz[0][1] == varmatriz[1][1] == varmatriz[2][1] != "-" 
+        or tablevarmatrizro2[1][1] == varmatriz[2][1] == varmatriz[3][1] != "-"):
+        ganador = tablero[1][1]
         gano = "gano vertical"
         return gano
-       
+    elif (varmatriz[0][2] == varmatriz[1][2] == varmatriz[2][2] != "-" 
+        or varmatriz[1][2] == varmatriz[2][2] == tablero[3][2] != "-"):
+        ganador = tablero[1][2]
+        gano = "gano vertical"
+        return gano
+    elif (varmatriz[0][3] == varmatriz[1][3] == varmatriz[2][3] != "-" 
+        or varmatriz[1][3] == varmatriz[2][3] == varmatriz[3][3] != "-"):
+        ganador = tablero[1][1]
+        gano = "gano vertical"
+        return gano
+
 ###################################################################
-       
+
+
 def controlDiagonal():
     global ganador
-    if (tablero[0][0] ==  tablero[1][1] == tablero[2][2] != "-" ) :
+    if (tablero[0][0] == tablero[1][1] == tablero[2][2] != "-"):
         ganador = tablero[0][0]
         gano = "gano diagonal"
         return gano
-    elif tablero[0][2] ==  tablero[1][1] == tablero[2][0] != "-":
+    elif tablero[0][2] == tablero[1][1] == tablero[2][0] != "-":
         ganador = tablero[2][0]
         gano = "gano diagonal"
         return gano
-       
+
 ###################################################################
-       
+
+
 def jugada(valor):
     anoto = False
-   
-    while anoto==False:
+
+    while anoto == False:
         posicionF = int(input("Elige una posicion en fila: "))
         posicionC = int(input("Elige una posicion en columna: "))
         posicionF -= 1
@@ -137,39 +172,45 @@ def jugada(valor):
             anoto = True
         else:
             print("Esa posicion ya esta ocupada")
-           
+
     tablero[posicionF][posicionC] = valor
-    
+
     ver_tablero(tab)
-   
+
 ###################################################################
-   
+
+
 def ver_tablero(tab):
-   
+
     if (tab):
-       
+
         print("\n")
-        print(tablero[0][0] , " | " , tablero[0][1] , " | " ,  tablero[0][2])
-        print(tablero[1][0] , " | " , tablero[1][1] , " | " ,  tablero[1][2])
-        print(tablero[2][0] , " | " , tablero[2][1] , " | " ,  tablero[2][2])
-        print("\n")
-       
-    else:
-               
-        print("\n")
-        print(tablero2[0][0] , " | " , tablero2[0][1] , " | " ,  tablero2[0][2] , " | " , tablero2[0][3])
-        print(tablero2[1][0] , " | " , tablero2[1][1] , " | " ,  tablero2[1][2] , " | " , tablero2[1][3])
-        print(tablero2[2][0] , " | " , tablero2[2][1] , " | " ,  tablero2[2][2] , " | " , tablero2[2][3])
-        print(tablero2[3][0] , " | " , tablero2[3][1] , " | " ,  tablero2[3][2] , " | " , tablero2[3][3])
+        print(tablero[0][0], " | ", tablero[0][1], " | ",  tablero[0][2])
+        print(tablero[1][0], " | ", tablero[1][1], " | ",  tablero[1][2])
+        print(tablero[2][0], " | ", tablero[2][1], " | ",  tablero[2][2])
         print("\n")
 
-s="SI"
+    else:
+
+        print("\n")
+        print(tablero2[0][0], " | ", tablero2[0][1], " | ",
+              tablero2[0][2], " | ", tablero2[0][3])
+        print(tablero2[1][0], " | ", tablero2[1][1], " | ",
+              tablero2[1][2], " | ", tablero2[1][3])
+        print(tablero2[2][0], " | ", tablero2[2][1], " | ",
+              tablero2[2][2], " | ", tablero2[2][3])
+        print(tablero2[3][0], " | ", tablero2[3][1], " | ",
+              tablero2[3][2], " | ", tablero2[3][3])
+        print("\n")
+
+
+s = "SI"
 
 ###################################################################
 
-while s=="SI":
+while s == "SI":
     jugar()
-    s=input("desea jugar de nuevo: ").upper()
-    tablero =[['-','-','-'],
-        ['-','-','-'],
-        ['-','-','-']]
+    s = input("desea jugar de nuevo: ").upper()
+    tablero = [['-', '-', '-'],
+               ['-', '-', '-'],
+               ['-', '-', '-']]
