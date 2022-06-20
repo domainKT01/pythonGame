@@ -106,7 +106,8 @@ def controlLinea():
     global gano
     if (varmatriz[0][0] == varmatriz[0][1] == varmatriz[0][2] != "-" ) :
         gano = "gano horizontal"
-        ganador = varmatriz[1][0]
+        print("gano")
+        ganador = varmatriz[0][0]
         return gano
     elif (tablero2[0][1] == tablero2[0][2] == tablero2[0][3] != "-") :
         gano = "gano horizontal"
@@ -127,6 +128,14 @@ def controlLinea():
     elif (tablero2[2][1] == tablero2[2][2] == tablero2[2][3] != "-") :
         gano = "gano horizontal"
         ganador = tablero2[2][1]
+        return gano
+    elif (tablero2[3][0] == tablero2[3][1] == tablero2[3][2] != "-") :
+        gano = "gano horizontal"
+        ganador = tablero2[3][0]
+        return gano
+    elif (tablero2[3][1] == tablero2[3][2] == tablero2[3][3] != "-") :
+        gano = "gano horizontal"
+        ganador = tablero2[3][1]
         return gano
         
 
@@ -282,3 +291,7 @@ while s == "SI":
     tablero = [['-', '-', '-'],
                ['-', '-', '-'],
                ['-', '-', '-']]
+    tablero2 = [['-', '-', '-', '-'],
+            ['-', '-', '-', '-'],
+            ['-', '-', '-', '-'],
+            ['-', '-', '-', '-']]
