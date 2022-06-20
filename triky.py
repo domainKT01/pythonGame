@@ -197,12 +197,12 @@ def jugada(valor):
         posicionC = int(input("Elige una posicion en columna: "))
         posicionF -= 1
         posicionC -= 1
-        if tablero[posicionF] != "-":
+        if varmatriz[posicionF] != "-":
             anoto = True
         else:
             print("Esa posicion ya esta ocupada")
 
-    tablero[posicionF][posicionC] = valor
+    varmatriz[posicionF][posicionC] = valor
 
     ver_tablero(tab)
 
