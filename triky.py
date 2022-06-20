@@ -167,9 +167,9 @@ def controlVertical():
 
 def controlDiagonal():
     global ganador
-    if (varmatriz[0][0] == varmatriz[1][1] == varmatriz[2][2] 
-        or tablero2[1][0] == tablero2[2][1] == tablero2[3][2] 
-        or tablero2[0][1] == tablero2[1][2] == tablero2[2][3] 
+    if (varmatriz[0][0] == varmatriz[1][1] == varmatriz[2][2] != "-"
+        or tablero2[1][0] == tablero2[2][1] == tablero2[3][2] != "-"
+        or tablero2[0][1] == tablero2[1][2] == tablero2[2][3] != "-"
         or tablero2[1][1] == tablero2[2][2] == tablero2[3][3] != "-" ):
         gano = "gano diagonal"
         if (varmatriz[0][0]) :
@@ -184,9 +184,9 @@ def controlDiagonal():
         elif (varmatriz[1][1]) :
             ganador = varmatriz[1][1]
             return gano
-    elif (varmatriz[0][2] == varmatriz[1][1] == varmatriz[2][0] 
-        or tablero2[0][3] == tablero2[1][2] == tablero2[2][1] 
-        or tablero2[1][3] == tablero2[2][2] == tablero2[3][2]
+    elif (varmatriz[0][2] == varmatriz[1][1] == varmatriz[2][0] != "-"
+        or tablero2[0][3] == tablero2[1][2] == tablero2[2][1] != "-"
+        or tablero2[1][3] == tablero2[2][2] == tablero2[3][2] != "-"
         or tablero2[1][2] == tablero2[2][1] == tablero2[3][0] != "-") :
         gano = "gano diagonal"
         if (varmatriz[0][2]) :
