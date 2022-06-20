@@ -105,7 +105,7 @@ def controlLinea():
     global ganador
     global gano
     if (varmatriz[0][0] == varmatriz[0][1] == varmatriz[0][2] != "-"
-            or [0][1] == varmatriz[0][2] == varmatriz[0][3] != "-"):
+            or [0][1] == tablero2[0][2] == tablero2[0][3] != "-"):
         ganador = tablero[0][1]
         gano = "gano horizontal"
         return gano
@@ -115,7 +115,7 @@ def controlLinea():
         gano = "gano horizontal"
         return gano
     elif (varmatriz[2][0] == varmatriz[2][1] == varmatriz[2][2] != "-"
-          or varmatriz[2][1] == varmatriz[2][2] == varmatriz[2][3] != "-"):
+          or tablero2[2][1] == tablero2[2][2] == tablero2[2][3] != "-"):
         ganador = tablero[2][1]
         gano = "gano horizontal"
         return gano
@@ -168,9 +168,9 @@ def controlVertical():
 def controlDiagonal():
     global ganador
     if (varmatriz[0][0] == varmatriz[1][1] == varmatriz[2][2] != "-" 
-        or varmatriz[1][0] == varmatriz[2][1] == varmatriz[3][2] 
-        or varmatriz[0][1] == varmatriz[1][2] == varmatriz[2][3] 
-        or varmatriz[1][1] == varmatriz[2][2] == varmatriz[3][3] != "-" ):
+        or tablero2[1][0] == v[2][1] == tablero2[3][2] 
+        or tablero2[0][1] == tablero2[1][2] == tablero2[2][3] 
+        or tablero2[1][1] == tablero2[2][2] == tablero2[3][3] != "-" ):
         gano = "gano diagonal"
         if (varmatriz[0][0]) :
             ganador = varmatriz[0][0]
@@ -185,9 +185,9 @@ def controlDiagonal():
             ganador = varmatriz[1][1]
             return gano
     elif (varmatriz[0][2] == varmatriz[1][1] == varmatriz[2][0] 
-        or varmatriz[0][3] == varmatriz[1][2] == varmatriz[2][1] 
-        or varmatriz[1][3] == varmatriz[2][2] == varmatriz[3][2]
-        or varmatriz[1][2] == varmatriz[2][1] == varmatriz[3][0] != "-") :
+        or tablero2[0][3] == tablero2[1][2] == tablero2[2][1] 
+        or tablero2[1][3] == tablero2[2][2] == tablero2[3][2]
+        or tablero2[1][2] == tablero2[2][1] == tablero2[3][0] != "-") :
         gano = "gano diagonal"
         if (varmatriz[0][2]) :
             ganador = varmatriz[0][2]
