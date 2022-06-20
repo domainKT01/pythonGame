@@ -84,7 +84,7 @@ def jugar():
         print("solo valores : 3 o 4")
 
 
-###################################################################
+########################################################################################################
 
 def huboGanador():
     global ganador
@@ -98,7 +98,7 @@ def huboGanador():
     if gano != None:
         return gano
 
-###################################################################
+########################################################################################################
 
 
 def controlLinea():
@@ -130,7 +130,7 @@ def controlLinea():
         return gano
         
 
-###################################################################
+########################################################################################################
 
 
 def controlVertical():
@@ -153,22 +153,22 @@ def controlVertical():
         return gano
     elif (varmatriz[0][2] == varmatriz[1][2] == varmatriz[2][2] != "-" ) :
         gano = "gano vertical"
-        ganador = varmatriz[0][2]
+        ganador = tablero2[0][2]
         return gano
     elif (tablero2[1][2] == tablero2[2][2] == tablero2[3][2] != "-"):
         gano = "gano vertical"
         ganador = tablero2[1][2]
         return gano
-    elif (varmatriz[0][3] == varmatriz[1][3] == varmatriz[2][3] != "-" ):
+    elif (tablero2[0][3] == tablero2[1][3] == tablero2[2][3] != "-" ):
         gano = "gano vertical"
-        ganador = varmatriz[0][3]
+        ganador = tablero2[0][3]
         return gano
     elif (tablero2[1][3] == tablero2[2][3] == tablero2[3][3] != "-"):
         gano = "gano vertical"
         ganador = tablero2[1][3]
         return gano
 
-###################################################################
+########################################################################################################
 
 
 def controlDiagonal():
@@ -189,6 +189,24 @@ def controlDiagonal():
         gano = "gano diagonal"
         ganador = tablero2[1][1]
         return gano
+        #################################################################
+    elif (varmatriz[0][2] == varmatriz[1][1] == varmatriz[2][0] != "-" ) :
+        gano = "gano diagonal"
+        ganador = varmatriz[0][2]
+        return gano
+    elif (tablero2[0][3] == tablero2[1][2] == tablero2[2][1] != "-") :
+        gano = "gano diagonal"
+        ganador = tablero2[0][3]
+        return gano
+    elif (tablero2[1][3] == tablero2[2][2] == tablero2[3][2] != "-") :
+        gano = "gano diagonal"
+        ganador = tablero2[1][3]
+        return gano
+    elif (tablero2[1][2] == tablero2[2][1] == tablero2[3][0] != "-") :
+        gano = "gano diagonal"
+        ganador = tablero2[1][2]
+        return gano
+        ###############################################################
     elif (varmatriz[0][2] == varmatriz[1][1] == varmatriz[2][0] != "-" ) :
         gano = "gano diagonal"
         ganador = varmatriz[0][2]
@@ -207,7 +225,7 @@ def controlDiagonal():
         return gano
         
         
-###################################################################
+########################################################################################################
 
 
 def jugada(valor):
@@ -227,7 +245,7 @@ def jugada(valor):
 
     ver_tablero(tab)
 
-###################################################################
+########################################################################################################
 
 
 def ver_tablero(tab):
@@ -256,7 +274,7 @@ def ver_tablero(tab):
 
 s = "SI"
 
-###################################################################
+########################################################################################################
 
 while s == "SI":
     jugar()
