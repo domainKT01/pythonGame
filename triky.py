@@ -105,7 +105,7 @@ def controlLinea():
     global ganador
     global gano
     if (varmatriz[0][0] == varmatriz[0][1] == varmatriz[0][2] != "-"
-            or [0][1] == tablero2[0][2] == tablero2[0][3] != "-"):
+            or tablero2[0][1] == tablero2[0][2] == tablero2[0][3] != "-"):
         ganador = tablero[0][1]
         gano = "gano horizontal"
         return gano
