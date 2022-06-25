@@ -12,12 +12,19 @@ tTablero = int(input(
 
 
 def fn_datosUsuario():
-    fila = int(input("ingrese valor de la fila: "))-1
-    columna = int(input("ingrese el valor de la columna: "))-1
+    anoto = False
+    while anoto == False:
+        fila = int(input("ingrese valor de la fila: "))-1
+        columna = int(input("ingrese el valor de la columna: "))-1
+        if tablero[fila][columna] != "-":
+            anoto = True
+        else:
+            print("Esa posicion ya esta ocupada")
 
     return fila, columna
 
 # imprime tablero 3x3 o 4x4
+
 
 def fn_imprimir(tablero, tTablero):
     if tTablero == 3:
@@ -62,7 +69,7 @@ def ganador(tablero):
 
             b = (0)
 
-            print (l)
+            print(l)
             print(type(l))
 
             l = n + 1

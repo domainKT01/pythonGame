@@ -229,13 +229,11 @@ def jugada(valor):
         posicionF -= 1
         posicionC -= 1
         if varmatriz[posicionF] != "-":
-            anoto = True
-        else:
             print("Esa posicion ya esta ocupada")
+        else:
+            anoto = True
 
-    varmatriz[posicionF][posicionC] = valor
-
-    ver_tablero(tab)
+   
 
 ########################################################################################################
 
